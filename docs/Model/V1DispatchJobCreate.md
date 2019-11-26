@@ -8,10 +8,9 @@ Name | Type | Description | Notes
 **destination_lat** | **double** | Latitude of the destination in decimal degrees. Optional if a valid destination address ID is provided. | [optional] 
 **destination_lng** | **double** | Longitude of the destination in decimal degrees. Optional if a valid destination address ID is provided. | [optional] 
 **destination_name** | **string** | The name of the job destination. If provided, it will take precedence over the name of the address book entry. | [optional] 
-**notes** | **string** | Notes regarding the details of this job, maximum of 2000 characters; newline characters (&#39;\\n&#39;)can be used for formatting. | [optional] 
+**notes** | **string** | Notes regarding the details of this job, maximum of 2000 characters; newline characters (&#x27;\\n&#x27;)can be used for formatting. | [optional] 
 **scheduled_arrival_time_ms** | **int** | The time at which the assigned driver is scheduled to arrive at the job destination. | 
 **scheduled_departure_time_ms** | **int** | The time at which the assigned driver is scheduled to depart from the job destination. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

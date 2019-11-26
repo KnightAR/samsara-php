@@ -10,6 +10,5 @@ Name | Type | Description | Notes
 **route** | [**\Samsara\Php\Client\Model\V1DispatchRoute**](V1DispatchRoute.md) |  | [optional] 
 **route_id** | **int** | ID of the Samsara dispatch route. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

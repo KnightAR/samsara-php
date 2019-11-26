@@ -8,6 +8,5 @@ Name | Type | Description | Notes
 **reject_count** | **int** | Returns reject count for the run. Should be used instead of failedScansCount | [optional] 
 **success_count** | **int** | Returns success count for the run. Should be used instead of successfulScansCount | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

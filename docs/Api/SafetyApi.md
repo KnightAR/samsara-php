@@ -1,13 +1,12 @@
 # Samsara\Php\Client\SafetyApi
 
-All URIs are relative to *https://api.samsara.com*
+All URIs are relative to *https://api.samsara.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1getDriverSafetyScore**](SafetyApi.md#v1getDriverSafetyScore) | **GET** /v1/fleet/drivers/{driverId}/safety/score | Fetch driver safety score
-[**v1getVehicleHarshEvent**](SafetyApi.md#v1getVehicleHarshEvent) | **GET** /v1/fleet/vehicles/{vehicleId}/safety/harsh_event | Fetch harsh events
-[**v1getVehicleSafetyScore**](SafetyApi.md#v1getVehicleSafetyScore) | **GET** /v1/fleet/vehicles/{vehicleId}/safety/score | Fetch vehicle safety scores
-
+[**v1getDriverSafetyScore**](SafetyApi.md#v1getdriversafetyscore) | **GET** /v1/fleet/drivers/{driverId}/safety/score | Fetch driver safety score
+[**v1getVehicleHarshEvent**](SafetyApi.md#v1getvehicleharshevent) | **GET** /v1/fleet/vehicles/{vehicleId}/safety/harsh_event | Fetch harsh events
+[**v1getVehicleSafetyScore**](SafetyApi.md#v1getvehiclesafetyscore) | **GET** /v1/fleet/vehicles/{vehicleId}/safety/score | Fetch vehicle safety scores
 
 # **v1getDriverSafetyScore**
 > \Samsara\Php\Client\Model\V1DriverSafetyScoreResponse v1getDriverSafetyScore($driver_id, $start_ms, $end_ms)
@@ -20,11 +19,16 @@ Fetch driver safety score
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\SafetyApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $driver_id = 789; // int | ID of the driver. Must contain only digits 0-9.
 $start_ms = 789; // int | Timestamp in milliseconds representing the start of the period to fetch, inclusive. Used in combination with endMs. Total duration (endMs - startMs) must be greater than or equal to 1 hour.
@@ -53,11 +57,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -73,11 +77,16 @@ Fetch harsh events
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\SafetyApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $vehicle_id = 789; // int | ID of the vehicle. Must contain only digits 0-9.
 $timestamp = 789; // int | Timestamp in milliseconds representing the timestamp of a harsh event.
@@ -104,11 +113,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -124,11 +133,16 @@ Fetch vehicle safety scores
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\SafetyApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $vehicle_id = 789; // int | ID of the vehicle. Must contain only digits 0-9.
 $start_ms = 789; // int | Timestamp in milliseconds representing the start of the period to fetch, inclusive. Used in combination with endMs. Total duration (endMs - startMs) must be greater than or equal to 1 hour.
@@ -157,11 +171,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

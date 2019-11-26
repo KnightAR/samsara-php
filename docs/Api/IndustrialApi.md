@@ -1,20 +1,19 @@
 # Samsara\Php\Client\IndustrialApi
 
-All URIs are relative to *https://api.samsara.com*
+All URIs are relative to *https://api.samsara.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getVisionRunsByCamera**](IndustrialApi.md#getVisionRunsByCamera) | **GET** /v1/industrial/vision/runs/{camera_id} | Fetch runs by camera
-[**v1getAllDataInputs**](IndustrialApi.md#v1getAllDataInputs) | **GET** /v1/industrial/data | Get industrial data
-[**v1getCameras**](IndustrialApi.md#v1getCameras) | **GET** /v1/industrial/vision/cameras | Fetch industrial cameras
-[**v1getDataInput**](IndustrialApi.md#v1getDataInput) | **GET** /v1/industrial/data/{data_input_id} | Get industrial data from a specific device
-[**v1getMachines**](IndustrialApi.md#v1getMachines) | **POST** /v1/machines/list | Get machines
-[**v1getMachinesHistory**](IndustrialApi.md#v1getMachinesHistory) | **POST** /v1/machines/history | Get machine history
-[**v1getVisionLatestRunCamera**](IndustrialApi.md#v1getVisionLatestRunCamera) | **GET** /v1/industrial/vision/run/camera/{camera_id} | Fetch the latest run for a camera or program
-[**v1getVisionProgramsByCamera**](IndustrialApi.md#v1getVisionProgramsByCamera) | **GET** /v1/industrial/vision/cameras/{camera_id}/programs | Fetch industrial camera programs
-[**v1getVisionRuns**](IndustrialApi.md#v1getVisionRuns) | **GET** /v1/industrial/vision/runs | Fetch runs
-[**v1getVisionRunsByCameraAndProgram**](IndustrialApi.md#v1getVisionRunsByCameraAndProgram) | **GET** /v1/industrial/vision/runs/{camera_id}/{program_id}/{started_at_ms} | Fetch runs by camera and program
-
+[**getVisionRunsByCamera**](IndustrialApi.md#getvisionrunsbycamera) | **GET** /v1/industrial/vision/runs/{camera_id} | Fetch runs by camera
+[**v1getAllDataInputs**](IndustrialApi.md#v1getalldatainputs) | **GET** /v1/industrial/data | Get industrial data
+[**v1getCameras**](IndustrialApi.md#v1getcameras) | **GET** /v1/industrial/vision/cameras | Fetch industrial cameras
+[**v1getDataInput**](IndustrialApi.md#v1getdatainput) | **GET** /v1/industrial/data/{data_input_id} | Get industrial data from a specific device
+[**v1getMachines**](IndustrialApi.md#v1getmachines) | **POST** /v1/machines/list | Get machines
+[**v1getMachinesHistory**](IndustrialApi.md#v1getmachineshistory) | **POST** /v1/machines/history | Get machine history
+[**v1getVisionLatestRunCamera**](IndustrialApi.md#v1getvisionlatestruncamera) | **GET** /v1/industrial/vision/run/camera/{camera_id} | Fetch the latest run for a camera or program
+[**v1getVisionProgramsByCamera**](IndustrialApi.md#v1getvisionprogramsbycamera) | **GET** /v1/industrial/vision/cameras/{camera_id}/programs | Fetch industrial camera programs
+[**v1getVisionRuns**](IndustrialApi.md#v1getvisionruns) | **GET** /v1/industrial/vision/runs | Fetch runs
+[**v1getVisionRunsByCameraAndProgram**](IndustrialApi.md#v1getvisionrunsbycameraandprogram) | **GET** /v1/industrial/vision/runs/{camera_id}/{program_id}/{started_at_ms} | Fetch runs by camera and program
 
 # **getVisionRunsByCamera**
 > \Samsara\Php\Client\Model\V1VisionRunsByCameraResponse getVisionRunsByCamera($camera_id, $duration_ms, $end_ms)
@@ -27,11 +26,16 @@ Fetch runs by camera
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\IndustrialApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $camera_id = 789; // int | The camera_id should be valid for the given accessToken.
 $duration_ms = 789; // int | DurationMs is a required param. This works with the EndMs parameter. Indicates the duration in which the visionRuns will be fetched
@@ -60,17 +64,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1getAllDataInputs**
-> \Samsara\Php\Client\Model\InlineResponse20011 v1getAllDataInputs($start_ms, $end_ms)
+> \Samsara\Php\Client\Model\InlineResponse20017 v1getAllDataInputs($start_ms, $end_ms)
 
 Get industrial data
 
@@ -80,11 +84,16 @@ Get industrial data
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\IndustrialApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $start_ms = 789; // int | Timestamp in unix milliseconds representing the start of the period to fetch, inclusive. Used in combination with endMs. defaults to nowMs.
 $end_ms = 789; // int | Timestamp in unix milliseconds representing the end of the period to fetch, inclusive. Used in combination with startMs. Defaults to nowMs.
@@ -107,15 +116,15 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Samsara\Php\Client\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
+[**\Samsara\Php\Client\Model\InlineResponse20017**](../Model/InlineResponse20017.md)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -131,11 +140,16 @@ Fetch industrial cameras
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\IndustrialApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -156,11 +170,11 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -176,11 +190,16 @@ Get industrial data from a specific device
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\IndustrialApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $data_input_id = 789; // int | ID of the data input. Must contain only digits 0-9.
 $start_ms = 789; // int | Timestamp in unix milliseconds representing the start of the period to fetch, inclusive. Used in combination with endMs. defaults to nowMs.
@@ -209,17 +228,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1getMachines**
-> \Samsara\Php\Client\Model\InlineResponse20012 v1getMachines()
+> \Samsara\Php\Client\Model\InlineResponse20018 v1getMachines()
 
 Get machines
 
@@ -229,11 +248,16 @@ Get machines
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\IndustrialApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -250,21 +274,21 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Samsara\Php\Client\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
+[**\Samsara\Php\Client\Model\InlineResponse20018**](../Model/InlineResponse20018.md)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1getMachinesHistory**
-> \Samsara\Php\Client\Model\V1MachineHistoryResponse v1getMachinesHistory($history_param)
+> \Samsara\Php\Client\Model\V1MachineHistoryResponse v1getMachinesHistory($body)
 
 Get machine history
 
@@ -274,16 +298,21 @@ Get machine history
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\IndustrialApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$history_param = new \Samsara\Php\Client\Model\HistoryParam(); // \Samsara\Php\Client\Model\HistoryParam | Time range to query for events
+$body = new \Samsara\Php\Client\Model\Body4(); // \Samsara\Php\Client\Model\Body4 | Time range to query for events
 
 try {
-    $result = $apiInstance->v1getMachinesHistory($history_param);
+    $result = $apiInstance->v1getMachinesHistory($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IndustrialApi->v1getMachinesHistory: ', $e->getMessage(), PHP_EOL;
@@ -295,7 +324,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **history_param** | [**\Samsara\Php\Client\Model\HistoryParam**](../Model/HistoryParam.md)| Time range to query for events |
+ **body** | [**\Samsara\Php\Client\Model\Body4**](../Model/Body4.md)| Time range to query for events |
 
 ### Return type
 
@@ -303,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -323,11 +352,16 @@ Fetch the latest run for a camera or program by default. If startedAtMs is suppl
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\IndustrialApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $camera_id = 789; // int | The camera_id should be valid for the given accessToken.
 $program_id = 789; // int | The configured program's ID on the camera.
@@ -349,9 +383,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **camera_id** | **int**| The camera_id should be valid for the given accessToken. |
- **program_id** | **int**| The configured program&#39;s ID on the camera. | [optional]
+ **program_id** | **int**| The configured program&#x27;s ID on the camera. | [optional]
  **started_at_ms** | **int**| EndMs is an optional param. It will default to the current time. | [optional]
- **include** | **string**| Include is a filter parameter. Accepts &#39;pass&#39;, &#39;reject&#39; or &#39;no_read&#39;. | [optional]
+ **include** | **string**| Include is a filter parameter. Accepts &#x27;pass&#x27;, &#x27;reject&#x27; or &#x27;no_read&#x27;. | [optional]
  **limit** | **int**| Limit is an integer value from 1 to 1,000. | [optional]
 
 ### Return type
@@ -360,11 +394,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -380,11 +414,16 @@ Fetch industrial camera programs
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\IndustrialApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $camera_id = 789; // int | The camera_id should be valid for the given accessToken.
 
@@ -409,11 +448,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -429,11 +468,16 @@ Fetch runs
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\IndustrialApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $duration_ms = 789; // int | DurationMs is a required param. This works with the EndMs parameter. Indicates the duration in which the visionRuns will be fetched
 $end_ms = 789; // int | EndMs is an optional param. It will default to the current time.
@@ -460,11 +504,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -480,11 +524,16 @@ Fetch runs by camera and program
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\IndustrialApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $camera_id = 789; // int | The camera_id should be valid for the given accessToken.
 $program_id = 789; // int | The configured program's ID on the camera.
@@ -505,9 +554,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **camera_id** | **int**| The camera_id should be valid for the given accessToken. |
- **program_id** | **int**| The configured program&#39;s ID on the camera. |
+ **program_id** | **int**| The configured program&#x27;s ID on the camera. |
  **started_at_ms** | **int**| Started_at_ms is a required param. Indicates the start time of the run to be fetched. |
- **include** | **string**| Include is a filter parameter. Accepts &#39;pass&#39;, &#39;reject&#39; or &#39;no_read&#39;. | [optional]
+ **include** | **string**| Include is a filter parameter. Accepts &#x27;pass&#x27;, &#x27;reject&#x27; or &#x27;no_read&#x27;. | [optional]
 
 ### Return type
 
@@ -515,11 +564,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

@@ -21,6 +21,5 @@ Name | Type | Description | Notes
 **vehicle_condition** | **string** | The condition of vechile on which DVIR was done. | [optional] 
 **vehicle_defects** | [**\Samsara\Php\Client\Model\V1DvirDefectBase[]**](V1DvirDefectBase.md) | Defects registered for the vehicle which was part of the DVIR. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

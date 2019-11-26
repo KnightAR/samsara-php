@@ -11,6 +11,5 @@ Name | Type | Description | Notes
 **resolved_by_driver_id** | **int** | ID of the driver who resolved this defect. Will not be returned if the defect is unresolved or resolvedByMechanicId is returned. | [optional] 
 **resolved_by_mechanic_id** | **int** | ID of the mechanic who resolved this defect. Will not be returned if the defect is unresolved or resolvedByDriverId is returned. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

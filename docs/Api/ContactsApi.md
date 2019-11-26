@@ -1,18 +1,17 @@
 # Samsara\Php\Client\ContactsApi
 
-All URIs are relative to *https://api.samsara.com*
+All URIs are relative to *https://api.samsara.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createContact**](ContactsApi.md#createContact) | **POST** /contacts | Create a contact
-[**deleteContactById**](ContactsApi.md#deleteContactById) | **DELETE** /contacts/{id} | Delete a contact
-[**getContactById**](ContactsApi.md#getContactById) | **GET** /contacts/{id} | Retrieve a contact
-[**getContacts**](ContactsApi.md#getContacts) | **GET** /contacts | List all contacts
-[**updateContactById**](ContactsApi.md#updateContactById) | **PATCH** /contacts/{id} | Update a contact
-
+[**createContact**](ContactsApi.md#createcontact) | **POST** /contacts | Create a contact
+[**deleteContactById**](ContactsApi.md#deletecontactbyid) | **DELETE** /contacts/{id} | Delete a contact
+[**getContactById**](ContactsApi.md#getcontactbyid) | **GET** /contacts/{id} | Retrieve a contact
+[**getContacts**](ContactsApi.md#getcontacts) | **GET** /contacts | List all contacts
+[**updateContactById**](ContactsApi.md#updatecontactbyid) | **PATCH** /contacts/{id} | Update a contact
 
 # **createContact**
-> \Samsara\Php\Client\Model\InlineResponse2001 createContact($contact)
+> \Samsara\Php\Client\Model\InlineResponse2003 createContact($body)
 
 Create a contact
 
@@ -22,16 +21,21 @@ Add a contact to the organization
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\ContactsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$contact = new \Samsara\Php\Client\Model\ContactInput(); // \Samsara\Php\Client\Model\ContactInput | Add a contact.
+$body = new \Samsara\Php\Client\Model\ContactInput(); // \Samsara\Php\Client\Model\ContactInput | Add a contact.
 
 try {
-    $result = $apiInstance->createContact($contact);
+    $result = $apiInstance->createContact($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->createContact: ', $e->getMessage(), PHP_EOL;
@@ -43,15 +47,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contact** | [**\Samsara\Php\Client\Model\ContactInput**](../Model/ContactInput.md)| Add a contact. |
+ **body** | [**\Samsara\Php\Client\Model\ContactInput**](../Model/ContactInput.md)| Add a contact. |
 
 ### Return type
 
-[**\Samsara\Php\Client\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Samsara\Php\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -71,11 +75,16 @@ Delete the given contact.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\ContactsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "id_example"; // string | Unique identifier for the contact.
 
@@ -99,17 +108,17 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContactById**
-> \Samsara\Php\Client\Model\InlineResponse2001 getContactById($id)
+> \Samsara\Php\Client\Model\InlineResponse2003 getContactById($id)
 
 Retrieve a contact
 
@@ -119,11 +128,16 @@ Get a specific contact's information.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\ContactsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "id_example"; // string | Unique identifier for the contact.
 
@@ -144,21 +158,21 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Samsara\Php\Client\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Samsara\Php\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getContacts**
-> object getContacts($limit, $after)
+> \Samsara\Php\Client\Model\InlineResponse2002 getContacts($limit, $after)
 
 List all contacts
 
@@ -168,13 +182,18 @@ Returns a list of all contacts in an organization.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\ContactsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$limit = 512; // int | The limit for how many objects will be in the response. Default and max for this value is 512 objects.
+$limit = 789; // int | The limit for how many objects will be in the response. Default and max for this value is 512 objects.
 $after = "after_example"; // string | If specified, this should be the endCursor value from the previous page of results. When present, this request will return the next page of results that occur immediately after the previous page of results.
 
 try {
@@ -190,26 +209,26 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| The limit for how many objects will be in the response. Default and max for this value is 512 objects. | [optional] [default to 512]
+ **limit** | **int**| The limit for how many objects will be in the response. Default and max for this value is 512 objects. | [optional]
  **after** | **string**| If specified, this should be the endCursor value from the previous page of results. When present, this request will return the next page of results that occur immediately after the previous page of results. | [optional]
 
 ### Return type
 
-**object**
+[**\Samsara\Php\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateContactById**
-> \Samsara\Php\Client\Model\InlineResponse2001 updateContactById($id, $contact)
+> \Samsara\Php\Client\Model\InlineResponse2003 updateContactById($id, $body)
 
 Update a contact
 
@@ -219,17 +238,22 @@ Update a specific contact's information.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\ContactsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "id_example"; // string | Unique identifier for the contact.
-$contact = new \Samsara\Php\Client\Model\ContactInput(); // \Samsara\Php\Client\Model\ContactInput | Updates to the contact.
+$body = new \Samsara\Php\Client\Model\ContactInput(); // \Samsara\Php\Client\Model\ContactInput | Updates to the contact.
 
 try {
-    $result = $apiInstance->updateContactById($id, $contact);
+    $result = $apiInstance->updateContactById($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsApi->updateContactById: ', $e->getMessage(), PHP_EOL;
@@ -242,15 +266,15 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Unique identifier for the contact. |
- **contact** | [**\Samsara\Php\Client\Model\ContactInput**](../Model/ContactInput.md)| Updates to the contact. | [optional]
+ **body** | [**\Samsara\Php\Client\Model\ContactInput**](../Model/ContactInput.md)| Updates to the contact. | [optional]
 
 ### Return type
 
-[**\Samsara\Php\Client\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Samsara\Php\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 

@@ -20,6 +20,5 @@ Name | Type | Description | Notes
 **time_until_break** | **int** | The amount of time (in ms) remaining until the driver cannot drive without a rest break. | [optional] 
 **vehicle_name** | **string** | Name of the vehicle. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

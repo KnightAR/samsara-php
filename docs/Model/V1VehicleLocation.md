@@ -18,6 +18,5 @@ Name | Type | Description | Notes
 **time** | **int** | The time the reported location was logged, reported as a UNIX timestamp in milliseconds. | [optional] 
 **vin** | **string** | Vehicle Identification Number (VIN) of the vehicle. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

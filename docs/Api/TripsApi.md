@@ -1,11 +1,10 @@
 # Samsara\Php\Client\TripsApi
 
-All URIs are relative to *https://api.samsara.com*
+All URIs are relative to *https://api.samsara.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1getFleetTrips**](TripsApi.md#v1getFleetTrips) | **GET** /v1/fleet/trips | Get vehicle trips
-
+[**v1getFleetTrips**](TripsApi.md#v1getfleettrips) | **GET** /v1/fleet/trips | Get vehicle trips
 
 # **v1getFleetTrips**
 > \Samsara\Php\Client\Model\V1TripResponse v1getFleetTrips($vehicle_id, $start_ms, $end_ms)
@@ -18,11 +17,16 @@ Get vehicle trips
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\TripsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $vehicle_id = 789; // int | Vehicle ID to query.
 $start_ms = 56; // int | Beginning of the time range, specified in milliseconds UNIX time. Limited to a 90 day window with respect to startMs and endMs
@@ -51,11 +55,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

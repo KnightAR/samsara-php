@@ -1,17 +1,16 @@
 # Samsara\Php\Client\DocumentsApi
 
-All URIs are relative to *https://api.samsara.com*
+All URIs are relative to *https://api.samsara.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1createDriverDocument**](DocumentsApi.md#v1createDriverDocument) | **POST** /v1/fleet/drivers/{driver_id}/documents | Create a document
-[**v1getDriverDocumentByIdAndDriverId**](DocumentsApi.md#v1getDriverDocumentByIdAndDriverId) | **GET** /v1/fleet/drivers/{driver_id}/documents/{document_id} | Fetches a document
-[**v1getDriverDocumentTypesByOrgId**](DocumentsApi.md#v1getDriverDocumentTypesByOrgId) | **GET** /v1/fleet/drivers/document_types | Fetch document types
-[**v1getDriverDocumentsByOrgId**](DocumentsApi.md#v1getDriverDocumentsByOrgId) | **GET** /v1/fleet/drivers/documents | Fetch all documents
-
+[**v1createDriverDocument**](DocumentsApi.md#v1createdriverdocument) | **POST** /v1/fleet/drivers/{driver_id}/documents | Create a document
+[**v1getDriverDocumentByIdAndDriverId**](DocumentsApi.md#v1getdriverdocumentbyidanddriverid) | **GET** /v1/fleet/drivers/{driver_id}/documents/{document_id} | Fetches a document
+[**v1getDriverDocumentTypesByOrgId**](DocumentsApi.md#v1getdriverdocumenttypesbyorgid) | **GET** /v1/fleet/drivers/document_types | Fetch document types
+[**v1getDriverDocumentsByOrgId**](DocumentsApi.md#v1getdriverdocumentsbyorgid) | **GET** /v1/fleet/drivers/documents | Fetch all documents
 
 # **v1createDriverDocument**
-> \Samsara\Php\Client\Model\V1Document v1createDriverDocument($driver_id, $create_document_params)
+> \Samsara\Php\Client\Model\V1Document v1createDriverDocument($body, $driver_id)
 
 Create a document
 
@@ -21,17 +20,22 @@ Create a document
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
+$body = new \Samsara\Php\Client\Model\V1DocumentCreate(); // \Samsara\Php\Client\Model\V1DocumentCreate | To create a document for a given document type, the document type's uuid needs to be passed in to documentTypeUuid. The list of fields passed in should match the document type’s list of field types in the correct order. In other words, a field's valueType and value (i.e. only one of: stringValue, numberValue, or photoValue) at index _i_ should match with the document field type’s valueType at index _i_.
 $driver_id = 789; // int | ID of the driver for whom the document is created. Must contain only digits 0-9.
-$create_document_params = new \Samsara\Php\Client\Model\V1DocumentCreate(); // \Samsara\Php\Client\Model\V1DocumentCreate | To create a document for a given document type, the document type's uuid needs to be passed in to documentTypeUuid. The list of fields passed in should match the document type’s list of field types in the correct order. In other words, a field's valueType and value (i.e. only one of: stringValue, numberValue, or photoValue) at index _i_ should match with the document field type’s valueType at index _i_.
 
 try {
-    $result = $apiInstance->v1createDriverDocument($driver_id, $create_document_params);
+    $result = $apiInstance->v1createDriverDocument($body, $driver_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentsApi->v1createDriverDocument: ', $e->getMessage(), PHP_EOL;
@@ -43,8 +47,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Samsara\Php\Client\Model\V1DocumentCreate**](../Model/V1DocumentCreate.md)| To create a document for a given document type, the document type&#x27;s uuid needs to be passed in to documentTypeUuid. The list of fields passed in should match the document type’s list of field types in the correct order. In other words, a field&#x27;s valueType and value (i.e. only one of: stringValue, numberValue, or photoValue) at index _i_ should match with the document field type’s valueType at index _i_. |
  **driver_id** | **int**| ID of the driver for whom the document is created. Must contain only digits 0-9. |
- **create_document_params** | [**\Samsara\Php\Client\Model\V1DocumentCreate**](../Model/V1DocumentCreate.md)| To create a document for a given document type, the document type&#39;s uuid needs to be passed in to documentTypeUuid. The list of fields passed in should match the document type’s list of field types in the correct order. In other words, a field&#39;s valueType and value (i.e. only one of: stringValue, numberValue, or photoValue) at index _i_ should match with the document field type’s valueType at index _i_. |
 
 ### Return type
 
@@ -52,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -72,11 +76,16 @@ Fetches a document
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $driver_id = 789; // int | ID of the driver who submitted the document. Must contain only digits 0-9.
 $document_id = "document_id_example"; // string | ID of document.
@@ -103,11 +112,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -123,11 +132,16 @@ Fetch document types
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -148,11 +162,11 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -168,11 +182,16 @@ Fetch all documents
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\DocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $end_ms = 789; // int | Time in unix milliseconds that represents the oldest documents to return. Used in combination with durationMs. Defaults to now.
 $duration_ms = 789; // int | Time in milliseconds that represents the duration before endMs to query. Defaults to 24 hours.
@@ -201,11 +220,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

@@ -9,6 +9,5 @@ Name | Type | Description | Notes
 **speed_miles_per_hour** | **double** | The speed calculated from GPS that the asset was traveling at in miles per hour. | [optional] 
 **time_ms** | **float** | Time in Unix milliseconds since epoch when the asset was at the location. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -16,6 +16,5 @@ Name | Type | Description | Notes
 **total_time_driven_ms** | **int** | Amount of time driven in milliseconds | [optional] 
 **vehicle_id** | **int** | Vehicle ID | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

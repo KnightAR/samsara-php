@@ -8,6 +8,5 @@ Name | Type | Description | Notes
 **org_id** | **int** | ID for the organization this document belongs to. | 
 **uuid** | **string** | Universally unique identifier for the document type. Can be passed in as a documentTypeUuid when creating a document for this document type. | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -11,6 +11,5 @@ Name | Type | Description | Notes
 **remote_obd_test_records** | [**\Samsara\Php\Client\Model\RemoteObdTestRecords[]**](RemoteObdTestRecords.md) | Contains all of the specific OBD data collected for a single ECU present on a vehicle. There can can be multiple ECUs on a vehicle. | [optional] 
 **test_date_time** | [**\Samsara\Php\Client\Model\Time**](Time.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

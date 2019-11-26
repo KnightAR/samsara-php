@@ -8,6 +8,5 @@ Name | Type | Description | Notes
 **match_percentage** | **int** | The contour match percentage with the configured contour | [optional] 
 **match_threshold** | **int** | The configured match threshold for contours | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

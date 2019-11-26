@@ -1,17 +1,16 @@
 # Samsara\Php\Client\HoursOfServiceApi
 
-All URIs are relative to *https://api.samsara.com*
+All URIs are relative to *https://api.samsara.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1getFleetDriversHosDailyLogs**](HoursOfServiceApi.md#v1getFleetDriversHosDailyLogs) | **POST** /v1/fleet/drivers/{driver_id}/hos_daily_logs | Get daily HOS logs for a specific driver
-[**v1getFleetHosAuthenticationLogs**](HoursOfServiceApi.md#v1getFleetHosAuthenticationLogs) | **GET** /v1/fleet/hos_authentication_logs | Get HOS signin and signout
-[**v1getFleetHosLogs**](HoursOfServiceApi.md#v1getFleetHosLogs) | **POST** /v1/fleet/hos_logs | Get HOS logs for a specific driver
-[**v1getFleetHosLogsSummary**](HoursOfServiceApi.md#v1getFleetHosLogsSummary) | **GET** /v1/fleet/hos_logs_summary | Get current HOS status for all drivers
-
+[**v1getFleetDriversHosDailyLogs**](HoursOfServiceApi.md#v1getfleetdrivershosdailylogs) | **POST** /v1/fleet/drivers/{driver_id}/hos_daily_logs | Get daily HOS logs for a specific driver
+[**v1getFleetHosAuthenticationLogs**](HoursOfServiceApi.md#v1getfleethosauthenticationlogs) | **GET** /v1/fleet/hos_authentication_logs | Get HOS signin and signout
+[**v1getFleetHosLogs**](HoursOfServiceApi.md#v1getfleethoslogs) | **POST** /v1/fleet/hos_logs | Get HOS logs for a specific driver
+[**v1getFleetHosLogsSummary**](HoursOfServiceApi.md#v1getfleethoslogssummary) | **GET** /v1/fleet/hos_logs_summary | Get current HOS status for all drivers
 
 # **v1getFleetDriversHosDailyLogs**
-> \Samsara\Php\Client\Model\V1DriverDailyLogResponse v1getFleetDriversHosDailyLogs($driver_id, $hos_logs_param)
+> \Samsara\Php\Client\Model\V1DriverDailyLogResponse v1getFleetDriversHosDailyLogs($driver_id, $body)
 
 Get daily HOS logs for a specific driver
 
@@ -21,17 +20,22 @@ Get daily HOS logs for a specific driver
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\HoursOfServiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $driver_id = 789; // int | ID of the driver with HOS logs.
-$hos_logs_param = new \Samsara\Php\Client\Model\HosLogsParam(); // \Samsara\Php\Client\Model\HosLogsParam | 
+$body = new \Samsara\Php\Client\Model\Body(); // \Samsara\Php\Client\Model\Body | 
 
 try {
-    $result = $apiInstance->v1getFleetDriversHosDailyLogs($driver_id, $hos_logs_param);
+    $result = $apiInstance->v1getFleetDriversHosDailyLogs($driver_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HoursOfServiceApi->v1getFleetDriversHosDailyLogs: ', $e->getMessage(), PHP_EOL;
@@ -44,7 +48,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **driver_id** | **int**| ID of the driver with HOS logs. |
- **hos_logs_param** | [**\Samsara\Php\Client\Model\HosLogsParam**](../Model/HosLogsParam.md)|  | [optional]
+ **body** | [**\Samsara\Php\Client\Model\Body**](../Model/Body.md)|  | [optional]
 
 ### Return type
 
@@ -52,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -72,11 +76,16 @@ Get HOS signin and signout
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\HoursOfServiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $driver_id = 789; // int | Driver ID to query.
 $start_ms = 789; // int | Beginning of the time range, specified in milliseconds UNIX time.
@@ -105,17 +114,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1getFleetHosLogs**
-> \Samsara\Php\Client\Model\V1HosLogsResponse v1getFleetHosLogs($hos_logs_param)
+> \Samsara\Php\Client\Model\V1HosLogsResponse v1getFleetHosLogs($body)
 
 Get HOS logs for a specific driver
 
@@ -125,16 +134,21 @@ Get HOS logs for a specific driver
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\HoursOfServiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$hos_logs_param = new \Samsara\Php\Client\Model\HosLogsParam1(); // \Samsara\Php\Client\Model\HosLogsParam1 | 
+$body = new \Samsara\Php\Client\Model\Body1(); // \Samsara\Php\Client\Model\Body1 | 
 
 try {
-    $result = $apiInstance->v1getFleetHosLogs($hos_logs_param);
+    $result = $apiInstance->v1getFleetHosLogs($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HoursOfServiceApi->v1getFleetHosLogs: ', $e->getMessage(), PHP_EOL;
@@ -146,7 +160,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **hos_logs_param** | [**\Samsara\Php\Client\Model\HosLogsParam1**](../Model/HosLogsParam1.md)|  |
+ **body** | [**\Samsara\Php\Client\Model\Body1**](../Model/Body1.md)|  |
 
 ### Return type
 
@@ -154,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -174,14 +188,19 @@ Get current HOS status for all drivers
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\HoursOfServiceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $after = "after_example"; // string | Pagination parameter indicating the cursor position to continue returning results after. Used in conjunction with the 'limit' parameter.
-$limit = 8.14; // float | Pagination parameter indicating the number of results to return in this request. Used in conjunction with 'after'.
+$limit = 1.2; // float | Pagination parameter indicating the number of results to return in this request. Used in conjunction with 'after'.
 
 try {
     $result = $apiInstance->v1getFleetHosLogsSummary($after, $limit);
@@ -196,8 +215,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **after** | **string**| Pagination parameter indicating the cursor position to continue returning results after. Used in conjunction with the &#39;limit&#39; parameter. | [optional]
- **limit** | **float**| Pagination parameter indicating the number of results to return in this request. Used in conjunction with &#39;after&#39;. | [optional]
+ **after** | **string**| Pagination parameter indicating the cursor position to continue returning results after. Used in conjunction with the &#x27;limit&#x27; parameter. | [optional]
+ **limit** | **float**| Pagination parameter indicating the number of results to return in this request. Used in conjunction with &#x27;after&#x27;. | [optional]
 
 ### Return type
 
@@ -205,11 +224,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

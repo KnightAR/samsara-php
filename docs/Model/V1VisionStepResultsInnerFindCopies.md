@@ -9,6 +9,5 @@ Name | Type | Description | Notes
 **min_count** | **int** | The minimum number of copies allowed | [optional] 
 **threshold** | **int** | The minimum required similarity (in %) of a found copy compared to the configured match region | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

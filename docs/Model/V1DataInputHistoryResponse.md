@@ -7,6 +7,5 @@ Name | Type | Description | Notes
 **name** | **string** | Name of this data input | 
 **points** | [**\Samsara\Php\Client\Model\V1DataInputHistoryResponsePoints[]**](V1DataInputHistoryResponsePoints.md) | Data points from this data input | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

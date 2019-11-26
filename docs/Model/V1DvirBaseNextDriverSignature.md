@@ -10,6 +10,5 @@ Name | Type | Description | Notes
 **type** | **string** | Type corresponds to driver. | [optional] 
 **username** | **string** | Username of the  driver who signed the next DVIR on this vehicle. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

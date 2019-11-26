@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **minutes_since_mil** | **int** | Minutes Since MIL On as read from the CAN bus. | [optional] 
 **minutes_since_mil_valid** | **bool** | Indicates MinutesSinceMil was successfully read from the CAN bus. | [optional] 
 **misfire** | **string** | OBD Monitor Status - Misfire as read from the CAN bus. | [optional] 
-**not_ready_count** | **int** | Number of OBD Monitor Statuses reporting &#39;Supported and not ready&#39;. | [optional] 
+**not_ready_count** | **int** | Number of OBD Monitor Statuses reporting &#x27;Supported and not ready&#x27;. | [optional] 
 **o2_sensor** | **string** | OBD Monitor Status - Oxygen Sensor or Exhaust Gas Sensor as read from the CAN bus. | [optional] 
 **obd_monitor_status_valid** | **bool** | Indicates Obd Monitor Statuses were successfully read from the CAN bus. | [optional] 
 **obd_vin** | **string** | Vehicle identification number as read from the CAN bus. | [optional] 
@@ -51,6 +51,5 @@ Name | Type | Description | Notes
 **warmups_since_codes_cleared** | **int** | Warmups Since Codes Cleared as read from the CAN bus. | [optional] 
 **warmups_since_codes_cleared_valid** | **bool** | Indicates WarmupsSinceCodesCleared was successfully read from the CAN bus. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

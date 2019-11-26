@@ -1,18 +1,17 @@
 # Samsara\Php\Client\AddressesApi
 
-All URIs are relative to *https://api.samsara.com*
+All URIs are relative to *https://api.samsara.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAddress**](AddressesApi.md#createAddress) | **POST** /addresses | Create an address
-[**deleteAddressById**](AddressesApi.md#deleteAddressById) | **DELETE** /addresses/{id} | Delete an address
-[**getAddressById**](AddressesApi.md#getAddressById) | **GET** /addresses/{id} | Retrieve an address
-[**getAddresses**](AddressesApi.md#getAddresses) | **GET** /addresses | List all addresses
-[**updateAddressById**](AddressesApi.md#updateAddressById) | **PATCH** /addresses/{id} | Update an address
-
+[**createAddress**](AddressesApi.md#createaddress) | **POST** /addresses | Create an address
+[**deleteAddressById**](AddressesApi.md#deleteaddressbyid) | **DELETE** /addresses/{id} | Delete an address
+[**getAddressById**](AddressesApi.md#getaddressbyid) | **GET** /addresses/{id} | Retrieve an address
+[**getAddresses**](AddressesApi.md#getaddresses) | **GET** /addresses | List all addresses
+[**updateAddressById**](AddressesApi.md#updateaddressbyid) | **PATCH** /addresses/{id} | Update an address
 
 # **createAddress**
-> \Samsara\Php\Client\Model\InlineResponse200 createAddress($address)
+> \Samsara\Php\Client\Model\InlineResponse2001 createAddress($body)
 
 Create an address
 
@@ -22,16 +21,21 @@ Creates a new address in the organization
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\AddressesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$address = new \Samsara\Php\Client\Model\AddressCreate(); // \Samsara\Php\Client\Model\AddressCreate | The address to create.
+$body = new \Samsara\Php\Client\Model\AddressCreate(); // \Samsara\Php\Client\Model\AddressCreate | The address to create.
 
 try {
-    $result = $apiInstance->createAddress($address);
+    $result = $apiInstance->createAddress($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressesApi->createAddress: ', $e->getMessage(), PHP_EOL;
@@ -43,15 +47,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **address** | [**\Samsara\Php\Client\Model\AddressCreate**](../Model/AddressCreate.md)| The address to create. | [optional]
+ **body** | [**\Samsara\Php\Client\Model\AddressCreate**](../Model/AddressCreate.md)| The address to create. | [optional]
 
 ### Return type
 
-[**\Samsara\Php\Client\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Samsara\Php\Client\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -71,11 +75,16 @@ Delete a specific address.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\AddressesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "id_example"; // string | Unique Samsara ID for the address
 
@@ -99,17 +108,17 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAddressById**
-> \Samsara\Php\Client\Model\InlineResponse200 getAddressById($id)
+> \Samsara\Php\Client\Model\InlineResponse2001 getAddressById($id)
 
 Retrieve an address
 
@@ -119,11 +128,16 @@ Returns a specific address.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\AddressesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "id_example"; // string | Unique Samsara ID for the address
 
@@ -144,21 +158,21 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Samsara\Php\Client\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Samsara\Php\Client\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAddresses**
-> object getAddresses($limit, $after, $tag_ids)
+> \Samsara\Php\Client\Model\InlineResponse200 getAddresses($limit, $after, $tag_ids)
 
 List all addresses
 
@@ -168,13 +182,18 @@ Returns a list of all addresses in an organization
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\AddressesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$limit = 512; // int | The limit for how many objects will be in the response. Default and max for this value is 512 objects.
+$limit = 789; // int | The limit for how many objects will be in the response. Default and max for this value is 512 objects.
 $after = "after_example"; // string | If specified, this should be the endCursor value from the previous page of results. When present, this request will return the next page of results that occur immediately after the previous page of results.
 $tag_ids = array("tag_ids_example"); // string[] | A comma-separated list of tag IDs. Example: `tagIds=1234,5678`
 
@@ -191,27 +210,27 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| The limit for how many objects will be in the response. Default and max for this value is 512 objects. | [optional] [default to 512]
+ **limit** | **int**| The limit for how many objects will be in the response. Default and max for this value is 512 objects. | [optional]
  **after** | **string**| If specified, this should be the endCursor value from the previous page of results. When present, this request will return the next page of results that occur immediately after the previous page of results. | [optional]
  **tag_ids** | [**string[]**](../Model/string.md)| A comma-separated list of tag IDs. Example: &#x60;tagIds&#x3D;1234,5678&#x60; | [optional]
 
 ### Return type
 
-**object**
+[**\Samsara\Php\Client\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAddressById**
-> \Samsara\Php\Client\Model\InlineResponse200 updateAddressById($id, $address)
+> \Samsara\Php\Client\Model\InlineResponse2001 updateAddressById($id, $body)
 
 Update an address
 
@@ -221,17 +240,22 @@ Update a specific address.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\AddressesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "id_example"; // string | Unique Samsara ID for the address
-$address = new \Samsara\Php\Client\Model\AddressPatch(); // \Samsara\Php\Client\Model\AddressPatch | The address fields to update.
+$body = new \Samsara\Php\Client\Model\AddressPatch(); // \Samsara\Php\Client\Model\AddressPatch | The address fields to update.
 
 try {
-    $result = $apiInstance->updateAddressById($id, $address);
+    $result = $apiInstance->updateAddressById($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressesApi->updateAddressById: ', $e->getMessage(), PHP_EOL;
@@ -244,15 +268,15 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Unique Samsara ID for the address |
- **address** | [**\Samsara\Php\Client\Model\AddressPatch**](../Model/AddressPatch.md)| The address fields to update. | [optional]
+ **body** | [**\Samsara\Php\Client\Model\AddressPatch**](../Model/AddressPatch.md)| The address fields to update. | [optional]
 
 ### Return type
 
-[**\Samsara\Php\Client\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Samsara\Php\Client\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 

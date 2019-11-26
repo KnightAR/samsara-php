@@ -7,6 +7,5 @@ Name | Type | Description | Notes
 **number_value_type_metadata** | [**\Samsara\Php\Client\Model\V1DocumentFieldTypeNumberValueTypeMetadata**](V1DocumentFieldTypeNumberValueTypeMetadata.md) |  | [optional] 
 **value_type** | **string** | The kind of value that can be submitted for this fieldType. It should be either ValueType_Number, ValueType_String, or ValueType_Photo. | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

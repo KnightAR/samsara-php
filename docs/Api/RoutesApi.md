@@ -1,20 +1,19 @@
 # Samsara\Php\Client\RoutesApi
 
-All URIs are relative to *https://api.samsara.com*
+All URIs are relative to *https://api.samsara.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1createDispatchRoute**](RoutesApi.md#v1createDispatchRoute) | **POST** /v1/fleet/dispatch/routes | Create a new route
-[**v1deleteDispatchRouteById**](RoutesApi.md#v1deleteDispatchRouteById) | **DELETE** /v1/fleet/dispatch/routes/{route_id} | Delete a route
-[**v1fetchAllDispatchRoutes**](RoutesApi.md#v1fetchAllDispatchRoutes) | **GET** /v1/fleet/dispatch/routes | Get all routes
-[**v1fetchAllRouteJobUpdates**](RoutesApi.md#v1fetchAllRouteJobUpdates) | **GET** /v1/fleet/dispatch/routes/job_updates | Get route updates
-[**v1getDispatchRouteById**](RoutesApi.md#v1getDispatchRouteById) | **GET** /v1/fleet/dispatch/routes/{route_id} | Get a route
-[**v1getDispatchRouteHistory**](RoutesApi.md#v1getDispatchRouteHistory) | **GET** /v1/fleet/dispatch/routes/{route_id}/history | Get route history
-[**v1updateDispatchRouteById**](RoutesApi.md#v1updateDispatchRouteById) | **PUT** /v1/fleet/dispatch/routes/{route_id} | Update a route
-
+[**v1createDispatchRoute**](RoutesApi.md#v1createdispatchroute) | **POST** /v1/fleet/dispatch/routes | Create a new route
+[**v1deleteDispatchRouteById**](RoutesApi.md#v1deletedispatchroutebyid) | **DELETE** /v1/fleet/dispatch/routes/{route_id} | Delete a route
+[**v1fetchAllDispatchRoutes**](RoutesApi.md#v1fetchalldispatchroutes) | **GET** /v1/fleet/dispatch/routes | Get all routes
+[**v1fetchAllRouteJobUpdates**](RoutesApi.md#v1fetchallroutejobupdates) | **GET** /v1/fleet/dispatch/routes/job_updates | Get route updates
+[**v1getDispatchRouteById**](RoutesApi.md#v1getdispatchroutebyid) | **GET** /v1/fleet/dispatch/routes/{route_id} | Get a route
+[**v1getDispatchRouteHistory**](RoutesApi.md#v1getdispatchroutehistory) | **GET** /v1/fleet/dispatch/routes/{route_id}/history | Get route history
+[**v1updateDispatchRouteById**](RoutesApi.md#v1updatedispatchroutebyid) | **PUT** /v1/fleet/dispatch/routes/{route_id} | Update a route
 
 # **v1createDispatchRoute**
-> \Samsara\Php\Client\Model\V1DispatchRoute v1createDispatchRoute($create_dispatch_route_params)
+> \Samsara\Php\Client\Model\V1DispatchRoute v1createDispatchRoute($body)
 
 Create a new route
 
@@ -24,16 +23,21 @@ Create a new route
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\RoutesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$create_dispatch_route_params = new \Samsara\Php\Client\Model\V1DispatchRouteCreate(); // \Samsara\Php\Client\Model\V1DispatchRouteCreate | 
+$body = new \Samsara\Php\Client\Model\V1DispatchRouteCreate(); // \Samsara\Php\Client\Model\V1DispatchRouteCreate | 
 
 try {
-    $result = $apiInstance->v1createDispatchRoute($create_dispatch_route_params);
+    $result = $apiInstance->v1createDispatchRoute($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RoutesApi->v1createDispatchRoute: ', $e->getMessage(), PHP_EOL;
@@ -45,7 +49,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_dispatch_route_params** | [**\Samsara\Php\Client\Model\V1DispatchRouteCreate**](../Model/V1DispatchRouteCreate.md)|  |
+ **body** | [**\Samsara\Php\Client\Model\V1DispatchRouteCreate**](../Model/V1DispatchRouteCreate.md)|  |
 
 ### Return type
 
@@ -53,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -73,11 +77,16 @@ Delete a route
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\RoutesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $route_id = 789; // int | ID of the dispatch route. Must contain only digits 0-9.
 
@@ -101,11 +110,11 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -121,11 +130,16 @@ Get all routes
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\RoutesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $end_time = 789; // int | Time in unix milliseconds that represents the oldest routes to return. Used in combination with duration. Defaults to now.
 $duration = 789; // int | Time in milliseconds that represents the duration before end_time to query. Defaults to 24 hours.
@@ -152,11 +166,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -172,11 +186,16 @@ Get route updates
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\RoutesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $sequence_id = "sequence_id_example"; // string | Sequence ID from the response payload of the last request. Defaults to fetching updates from last 24 hours.
 $include = "include_example"; // string | Optionally set include=route to include route object in response payload.
@@ -203,11 +222,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -223,11 +242,16 @@ Get a route
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\RoutesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $route_id = 789; // int | ID of the dispatch route. Must contain only digits 0-9.
 
@@ -252,11 +276,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -272,11 +296,16 @@ Get route history
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\RoutesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $route_id = 789; // int | ID of the route with history. Must contain only digits 0-9.
 $start_time = 789; // int | Timestamp representing the start of the period to fetch, inclusive. Used in combination with end_time. Defaults to 0.
@@ -305,17 +334,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1updateDispatchRouteById**
-> \Samsara\Php\Client\Model\V1DispatchRoute v1updateDispatchRouteById($route_id, $update_dispatch_route_params)
+> \Samsara\Php\Client\Model\V1DispatchRoute v1updateDispatchRouteById($body, $route_id)
 
 Update a route
 
@@ -325,17 +354,22 @@ Update a route
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\RoutesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
+$body = new \Samsara\Php\Client\Model\V1DispatchRouteUpdate(); // \Samsara\Php\Client\Model\V1DispatchRouteUpdate | 
 $route_id = 789; // int | ID of the dispatch route. Must contain only digits 0-9.
-$update_dispatch_route_params = new \Samsara\Php\Client\Model\V1DispatchRouteUpdate(); // \Samsara\Php\Client\Model\V1DispatchRouteUpdate | 
 
 try {
-    $result = $apiInstance->v1updateDispatchRouteById($route_id, $update_dispatch_route_params);
+    $result = $apiInstance->v1updateDispatchRouteById($body, $route_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RoutesApi->v1updateDispatchRouteById: ', $e->getMessage(), PHP_EOL;
@@ -347,8 +381,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Samsara\Php\Client\Model\V1DispatchRouteUpdate**](../Model/V1DispatchRouteUpdate.md)|  |
  **route_id** | **int**| ID of the dispatch route. Must contain only digits 0-9. |
- **update_dispatch_route_params** | [**\Samsara\Php\Client\Model\V1DispatchRouteUpdate**](../Model/V1DispatchRouteUpdate.md)|  |
 
 ### Return type
 
@@ -356,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 

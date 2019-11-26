@@ -71,26 +71,90 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+$config = Samsara\Php\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $apiInstance = new Samsara\Php\Client\Api\AddressesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$address = new \Samsara\Php\Client\Model\AddressCreate(); // \Samsara\Php\Client\Model\AddressCreate | The address to create.
+$body = new \Samsara\Php\Client\Model\AddressCreate(); // \Samsara\Php\Client\Model\AddressCreate | The address to create.
 
 try {
-    $result = $apiInstance->createAddress($address);
+    $result = $apiInstance->createAddress($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AddressesApi->createAddress: ', $e->getMessage(), PHP_EOL;
 }
 
+$apiInstance = new Samsara\Php\Client\Api\AddressesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Unique Samsara ID for the address
+
+try {
+    $apiInstance->deleteAddressById($id);
+} catch (Exception $e) {
+    echo 'Exception when calling AddressesApi->deleteAddressById: ', $e->getMessage(), PHP_EOL;
+}
+
+$apiInstance = new Samsara\Php\Client\Api\AddressesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Unique Samsara ID for the address
+
+try {
+    $result = $apiInstance->getAddressById($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AddressesApi->getAddressById: ', $e->getMessage(), PHP_EOL;
+}
+
+$apiInstance = new Samsara\Php\Client\Api\AddressesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$limit = 789; // int | The limit for how many objects will be in the response. Default and max for this value is 512 objects.
+$after = "after_example"; // string | If specified, this should be the endCursor value from the previous page of results. When present, this request will return the next page of results that occur immediately after the previous page of results.
+$tag_ids = array("tag_ids_example"); // string[] | A comma-separated list of tag IDs. Example: `tagIds=1234,5678`
+
+try {
+    $result = $apiInstance->getAddresses($limit, $after, $tag_ids);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AddressesApi->getAddresses: ', $e->getMessage(), PHP_EOL;
+}
+
+$apiInstance = new Samsara\Php\Client\Api\AddressesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Unique Samsara ID for the address
+$body = new \Samsara\Php\Client\Model\AddressPatch(); // \Samsara\Php\Client\Model\AddressPatch | The address fields to update.
+
+try {
+    $result = $apiInstance->updateAddressById($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AddressesApi->updateAddressById: ', $e->getMessage(), PHP_EOL;
+}
 ?>
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.samsara.com*
+All URIs are relative to *https://api.samsara.com/*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -169,7 +233,6 @@ Class | Method | HTTP request | Description
 *VehiclesApi* | [**listVehiclesKondo**](docs/Api/VehiclesApi.md#listvehicleskondo) | **GET** /fleet/vehicles | List all vehicles
 *VehiclesApi* | [**updateVehicleById**](docs/Api/VehiclesApi.md#updatevehiclebyid) | **PATCH** /fleet/vehicles/{id} | Update a vehicle
 
-
 ## Documentation For Models
 
  - [Address](docs/Model/Address.md)
@@ -185,11 +248,16 @@ Class | Method | HTTP request | Description
  - [AddressPatch](docs/Model/AddressPatch.md)
  - [AddressRequestCore](docs/Model/AddressRequestCore.md)
  - [AddressResponseCore](docs/Model/AddressResponseCore.md)
+ - [Body](docs/Model/Body.md)
+ - [Body1](docs/Model/Body1.md)
+ - [Body2](docs/Model/Body2.md)
+ - [Body3](docs/Model/Body3.md)
+ - [Body4](docs/Model/Body4.md)
+ - [Body5](docs/Model/Body5.md)
+ - [Body6](docs/Model/Body6.md)
  - [Contact](docs/Model/Contact.md)
  - [ContactInput](docs/Model/ContactInput.md)
  - [ContactTinyResponse](docs/Model/ContactTinyResponse.md)
- - [CreateDvirParam](docs/Model/CreateDvirParam.md)
- - [CreateMessages](docs/Model/CreateMessages.md)
  - [Driver](docs/Model/Driver.md)
  - [DriverBase](docs/Model/DriverBase.md)
  - [DriverBaseCarrierSettings](docs/Model/DriverBaseCarrierSettings.md)
@@ -197,16 +265,18 @@ Class | Method | HTTP request | Description
  - [DriverTinyResponse](docs/Model/DriverTinyResponse.md)
  - [DriverUpdate](docs/Model/DriverUpdate.md)
  - [ExternalIds](docs/Model/ExternalIds.md)
- - [HistoryParam](docs/Model/HistoryParam.md)
- - [HistoryParam1](docs/Model/HistoryParam1.md)
- - [HosLogsParam](docs/Model/HosLogsParam.md)
- - [HosLogsParam1](docs/Model/HosLogsParam1.md)
  - [InlineResponse200](docs/Model/InlineResponse200.md)
  - [InlineResponse2001](docs/Model/InlineResponse2001.md)
  - [InlineResponse20010](docs/Model/InlineResponse20010.md)
  - [InlineResponse20011](docs/Model/InlineResponse20011.md)
  - [InlineResponse20012](docs/Model/InlineResponse20012.md)
  - [InlineResponse20013](docs/Model/InlineResponse20013.md)
+ - [InlineResponse20014](docs/Model/InlineResponse20014.md)
+ - [InlineResponse20015](docs/Model/InlineResponse20015.md)
+ - [InlineResponse20016](docs/Model/InlineResponse20016.md)
+ - [InlineResponse20017](docs/Model/InlineResponse20017.md)
+ - [InlineResponse20018](docs/Model/InlineResponse20018.md)
+ - [InlineResponse20019](docs/Model/InlineResponse20019.md)
  - [InlineResponse2002](docs/Model/InlineResponse2002.md)
  - [InlineResponse2003](docs/Model/InlineResponse2003.md)
  - [InlineResponse2004](docs/Model/InlineResponse2004.md)
@@ -366,14 +436,9 @@ Class | Method | HTTP request | Description
  - [V1VisionStepResultsInnerPresenceAbsenceSaturationRange](docs/Model/V1VisionStepResultsInnerPresenceAbsenceSaturationRange.md)
  - [V1VisionStepResultsInnerTextMatch](docs/Model/V1VisionStepResultsInnerTextMatch.md)
  - [V1allRouteJobUpdates](docs/Model/V1allRouteJobUpdates.md)
- - [V1groupIdBodyParam](docs/Model/V1groupIdBodyParam.md)
  - [V1jobStatus](docs/Model/V1jobStatus.md)
  - [V1jobUpdateObject](docs/Model/V1jobUpdateObject.md)
  - [V1prevJobStatus](docs/Model/V1prevJobStatus.md)
- - [V1sensorParam](docs/Model/V1sensorParam.md)
- - [V1sensorParam1](docs/Model/V1sensorParam1.md)
- - [V1sensorParam2](docs/Model/V1sensorParam2.md)
- - [V1sensorParam3](docs/Model/V1sensorParam3.md)
  - [V1sensorshistorySeries](docs/Model/V1sensorshistorySeries.md)
  - [VehicleCtpSmogTestData](docs/Model/VehicleCtpSmogTestData.md)
  - [VehicleCtpSmogTestDataWrapper](docs/Model/VehicleCtpSmogTestDataWrapper.md)
@@ -399,14 +464,15 @@ Class | Method | HTTP request | Description
  - [VehicleStatsSnapshotResponse](docs/Model/VehicleStatsSnapshotResponse.md)
  - [VehicleTinyResponse](docs/Model/VehicleTinyResponse.md)
 
-
 ## Documentation For Authorization
 
- All endpoints do not require authorization.
+
+## BearerAuth
+
+- **Type**: HTTP bearer authentication
 
 
 ## Author
-
 
 
 

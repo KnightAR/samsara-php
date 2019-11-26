@@ -1,19 +1,18 @@
 # Samsara\Php\Client\SensorsApi
 
-All URIs are relative to *https://api.samsara.com*
+All URIs are relative to *https://api.samsara.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1getSensors**](SensorsApi.md#v1getSensors) | **POST** /v1/sensors/list | Get all sensors
-[**v1getSensorsCargo**](SensorsApi.md#v1getSensorsCargo) | **POST** /v1/sensors/cargo | Get cargo status
-[**v1getSensorsDoor**](SensorsApi.md#v1getSensorsDoor) | **POST** /v1/sensors/door | Get door status
-[**v1getSensorsHistory**](SensorsApi.md#v1getSensorsHistory) | **POST** /v1/sensors/history | Get sensor history
-[**v1getSensorsHumidity**](SensorsApi.md#v1getSensorsHumidity) | **POST** /v1/sensors/humidity | Get humidity
-[**v1getSensorsTemperature**](SensorsApi.md#v1getSensorsTemperature) | **POST** /v1/sensors/temperature | Get temperature
-
+[**v1getSensors**](SensorsApi.md#v1getsensors) | **POST** /v1/sensors/list | Get all sensors
+[**v1getSensorsCargo**](SensorsApi.md#v1getsensorscargo) | **POST** /v1/sensors/cargo | Get cargo status
+[**v1getSensorsDoor**](SensorsApi.md#v1getsensorsdoor) | **POST** /v1/sensors/door | Get door status
+[**v1getSensorsHistory**](SensorsApi.md#v1getsensorshistory) | **POST** /v1/sensors/history | Get sensor history
+[**v1getSensorsHumidity**](SensorsApi.md#v1getsensorshumidity) | **POST** /v1/sensors/humidity | Get humidity
+[**v1getSensorsTemperature**](SensorsApi.md#v1getsensorstemperature) | **POST** /v1/sensors/temperature | Get temperature
 
 # **v1getSensors**
-> \Samsara\Php\Client\Model\InlineResponse20013 v1getSensors($v1group_id_body_param)
+> \Samsara\Php\Client\Model\InlineResponse20019 v1getSensors($body)
 
 Get all sensors
 
@@ -23,16 +22,21 @@ Get all sensors
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\SensorsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$v1group_id_body_param = new \Samsara\Php\Client\Model\V1groupIdBodyParam(); // \Samsara\Php\Client\Model\V1groupIdBodyParam | Group ID
+$body = new \Samsara\Php\Client\Model\Body6(); // \Samsara\Php\Client\Model\Body6 | Group ID
 
 try {
-    $result = $apiInstance->v1getSensors($v1group_id_body_param);
+    $result = $apiInstance->v1getSensors($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SensorsApi->v1getSensors: ', $e->getMessage(), PHP_EOL;
@@ -44,15 +48,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **v1group_id_body_param** | [**\Samsara\Php\Client\Model\V1groupIdBodyParam**](../Model/V1groupIdBodyParam.md)| Group ID | [optional]
+ **body** | [**\Samsara\Php\Client\Model\Body6**](../Model/Body6.md)| Group ID | [optional]
 
 ### Return type
 
-[**\Samsara\Php\Client\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\Samsara\Php\Client\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -62,7 +66,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1getSensorsCargo**
-> \Samsara\Php\Client\Model\V1CargoResponse v1getSensorsCargo($v1sensor_param)
+> \Samsara\Php\Client\Model\V1CargoResponse v1getSensorsCargo($body)
 
 Get cargo status
 
@@ -72,16 +76,21 @@ Get cargo status
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\SensorsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$v1sensor_param = new \Samsara\Php\Client\Model\V1sensorParam(); // \Samsara\Php\Client\Model\V1sensorParam | Group ID and list of sensor IDs to query.
+$body = new \stdClass; // object | Group ID and list of sensor IDs to query.
 
 try {
-    $result = $apiInstance->v1getSensorsCargo($v1sensor_param);
+    $result = $apiInstance->v1getSensorsCargo($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SensorsApi->v1getSensorsCargo: ', $e->getMessage(), PHP_EOL;
@@ -93,7 +102,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **v1sensor_param** | [**\Samsara\Php\Client\Model\V1sensorParam**](../Model/V1sensorParam.md)| Group ID and list of sensor IDs to query. |
+ **body** | [**object**](../Model/object.md)| Group ID and list of sensor IDs to query. |
 
 ### Return type
 
@@ -101,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -111,7 +120,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1getSensorsDoor**
-> \Samsara\Php\Client\Model\V1DoorResponse v1getSensorsDoor($v1sensor_param)
+> \Samsara\Php\Client\Model\V1DoorResponse v1getSensorsDoor($body)
 
 Get door status
 
@@ -121,16 +130,21 @@ Get door status
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\SensorsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$v1sensor_param = new \Samsara\Php\Client\Model\V1sensorParam1(); // \Samsara\Php\Client\Model\V1sensorParam1 | Group ID and list of sensor IDs to query.
+$body = new \stdClass; // object | Group ID and list of sensor IDs to query.
 
 try {
-    $result = $apiInstance->v1getSensorsDoor($v1sensor_param);
+    $result = $apiInstance->v1getSensorsDoor($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SensorsApi->v1getSensorsDoor: ', $e->getMessage(), PHP_EOL;
@@ -142,7 +156,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **v1sensor_param** | [**\Samsara\Php\Client\Model\V1sensorParam1**](../Model/V1sensorParam1.md)| Group ID and list of sensor IDs to query. |
+ **body** | [**object**](../Model/object.md)| Group ID and list of sensor IDs to query. |
 
 ### Return type
 
@@ -150,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -160,7 +174,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1getSensorsHistory**
-> \Samsara\Php\Client\Model\V1SensorHistoryResponse v1getSensorsHistory($history_param)
+> \Samsara\Php\Client\Model\V1SensorHistoryResponse v1getSensorsHistory($body)
 
 Get sensor history
 
@@ -170,16 +184,21 @@ Get sensor history
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\SensorsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$history_param = new \Samsara\Php\Client\Model\HistoryParam1(); // \Samsara\Php\Client\Model\HistoryParam1 | Group ID, time range and resolution, and list of sensor ID, field pairs to query.
+$body = new \Samsara\Php\Client\Model\Body5(); // \Samsara\Php\Client\Model\Body5 | Group ID, time range and resolution, and list of sensor ID, field pairs to query.
 
 try {
-    $result = $apiInstance->v1getSensorsHistory($history_param);
+    $result = $apiInstance->v1getSensorsHistory($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SensorsApi->v1getSensorsHistory: ', $e->getMessage(), PHP_EOL;
@@ -191,7 +210,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **history_param** | [**\Samsara\Php\Client\Model\HistoryParam1**](../Model/HistoryParam1.md)| Group ID, time range and resolution, and list of sensor ID, field pairs to query. |
+ **body** | [**\Samsara\Php\Client\Model\Body5**](../Model/Body5.md)| Group ID, time range and resolution, and list of sensor ID, field pairs to query. |
 
 ### Return type
 
@@ -199,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -209,7 +228,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1getSensorsHumidity**
-> \Samsara\Php\Client\Model\V1HumidityResponse v1getSensorsHumidity($v1sensor_param)
+> \Samsara\Php\Client\Model\V1HumidityResponse v1getSensorsHumidity($body)
 
 Get humidity
 
@@ -219,16 +238,21 @@ Get humidity
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\SensorsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$v1sensor_param = new \Samsara\Php\Client\Model\V1sensorParam2(); // \Samsara\Php\Client\Model\V1sensorParam2 | Group ID and list of sensor IDs to query.
+$body = new \stdClass; // object | Group ID and list of sensor IDs to query.
 
 try {
-    $result = $apiInstance->v1getSensorsHumidity($v1sensor_param);
+    $result = $apiInstance->v1getSensorsHumidity($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SensorsApi->v1getSensorsHumidity: ', $e->getMessage(), PHP_EOL;
@@ -240,7 +264,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **v1sensor_param** | [**\Samsara\Php\Client\Model\V1sensorParam2**](../Model/V1sensorParam2.md)| Group ID and list of sensor IDs to query. |
+ **body** | [**object**](../Model/object.md)| Group ID and list of sensor IDs to query. |
 
 ### Return type
 
@@ -248,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -258,7 +282,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1getSensorsTemperature**
-> \Samsara\Php\Client\Model\V1TemperatureResponse v1getSensorsTemperature($v1sensor_param)
+> \Samsara\Php\Client\Model\V1TemperatureResponse v1getSensorsTemperature($body)
 
 Get temperature
 
@@ -268,16 +292,21 @@ Get temperature
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\SensorsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$v1sensor_param = new \Samsara\Php\Client\Model\V1sensorParam3(); // \Samsara\Php\Client\Model\V1sensorParam3 | Group ID and list of sensor IDs to query.
+$body = new \stdClass; // object | Group ID and list of sensor IDs to query.
 
 try {
-    $result = $apiInstance->v1getSensorsTemperature($v1sensor_param);
+    $result = $apiInstance->v1getSensorsTemperature($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SensorsApi->v1getSensorsTemperature: ', $e->getMessage(), PHP_EOL;
@@ -289,7 +318,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **v1sensor_param** | [**\Samsara\Php\Client\Model\V1sensorParam3**](../Model/V1sensorParam3.md)| Group ID and list of sensor IDs to query. |
+ **body** | [**object**](../Model/object.md)| Group ID and list of sensor IDs to query. |
 
 ### Return type
 
@@ -297,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 

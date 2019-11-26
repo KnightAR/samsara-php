@@ -11,6 +11,5 @@ Name | Type | Description | Notes
 **is_distracted** | **bool** | Whether the driver was deemed distracted during this harsh event | [optional] 
 **location** | [**\Samsara\Php\Client\Model\V1VehicleHarshEventResponseLocation**](V1VehicleHarshEventResponseLocation.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

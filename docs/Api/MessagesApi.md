@@ -1,15 +1,14 @@
 # Samsara\Php\Client\MessagesApi
 
-All URIs are relative to *https://api.samsara.com*
+All URIs are relative to *https://api.samsara.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1createMessages**](MessagesApi.md#v1createMessages) | **POST** /v1/fleet/messages | Send a message to a list of driver ids.
-[**v1getMessages**](MessagesApi.md#v1getMessages) | **GET** /v1/fleet/messages | Get all messages.
-
+[**v1createMessages**](MessagesApi.md#v1createmessages) | **POST** /v1/fleet/messages | Send a message to a list of driver ids.
+[**v1getMessages**](MessagesApi.md#v1getmessages) | **GET** /v1/fleet/messages | Get all messages.
 
 # **v1createMessages**
-> \Samsara\Php\Client\Model\InlineResponse20010 v1createMessages($create_messages)
+> \Samsara\Php\Client\Model\InlineResponse20016 v1createMessages($body)
 
 Send a message to a list of driver ids.
 
@@ -19,16 +18,21 @@ Send a message to a list of driver ids.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\MessagesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$create_messages = new \Samsara\Php\Client\Model\CreateMessages(); // \Samsara\Php\Client\Model\CreateMessages | Text to send to a list of driverIds.
+$body = new \Samsara\Php\Client\Model\Body3(); // \Samsara\Php\Client\Model\Body3 | Text to send to a list of driverIds.
 
 try {
-    $result = $apiInstance->v1createMessages($create_messages);
+    $result = $apiInstance->v1createMessages($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MessagesApi->v1createMessages: ', $e->getMessage(), PHP_EOL;
@@ -40,15 +44,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_messages** | [**\Samsara\Php\Client\Model\CreateMessages**](../Model/CreateMessages.md)| Text to send to a list of driverIds. |
+ **body** | [**\Samsara\Php\Client\Model\Body3**](../Model/Body3.md)| Text to send to a list of driverIds. |
 
 ### Return type
 
-[**\Samsara\Php\Client\Model\InlineResponse20010**](../Model/InlineResponse20010.md)
+[**\Samsara\Php\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -58,7 +62,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **v1getMessages**
-> \Samsara\Php\Client\Model\InlineResponse2009 v1getMessages($end_ms, $duration_ms)
+> \Samsara\Php\Client\Model\InlineResponse20015 v1getMessages($end_ms, $duration_ms)
 
 Get all messages.
 
@@ -68,11 +72,16 @@ Get all messages.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: BearerAuth
+    $config = Samsara\Php\Client\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Samsara\Php\Client\Api\MessagesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $end_ms = 789; // int | Time in unix milliseconds that represents the end of time range of messages to return. Used in combination with durationMs. Defaults to now.
 $duration_ms = 789; // int | Time in milliseconds that represents the duration before endMs to query. Defaults to 24 hours.
@@ -95,15 +104,15 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Samsara\Php\Client\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
+[**\Samsara\Php\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../../README.md#BearerAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

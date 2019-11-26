@@ -11,6 +11,5 @@ Name | Type | Description | Notes
 **run_summary** | [**\Samsara\Php\Client\Model\V1VisionRunByCameraResponseRunSummary**](V1VisionRunByCameraResponseRunSummary.md) |  | [optional] 
 **started_at_ms** | **int** |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

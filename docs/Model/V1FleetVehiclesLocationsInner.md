@@ -7,6 +7,5 @@ Name | Type | Description | Notes
 **locations** | [**\Samsara\Php\Client\Model\V1FleetVehicleLocations**](V1FleetVehicleLocations.md) |  | [optional] 
 **name** | **string** | Name of the vehicle. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

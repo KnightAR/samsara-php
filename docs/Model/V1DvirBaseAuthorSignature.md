@@ -11,6 +11,5 @@ Name | Type | Description | Notes
 **type** | **string** | Type corresponds to whether the signature corresponds to driver|mechanic. | [optional] 
 **username** | **string** | Username of the  driver|mechanic who signed the DVIR. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

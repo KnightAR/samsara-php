@@ -13,6 +13,5 @@ Name | Type | Description | Notes
 **straightness_range** | [**\Samsara\Php\Client\Model\V1VisionStepResultsInnerCaliperStraightnessRange**](V1VisionStepResultsInnerCaliperStraightnessRange.md) |  | [optional] 
 **unit** | **string** | The measurement unit of the distance found and the min and max distance threshold | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

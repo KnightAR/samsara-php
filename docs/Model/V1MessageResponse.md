@@ -9,6 +9,5 @@ Name | Type | Description | Notes
 **sent_at_ms** | **int** | The time in Unix epoch milliseconds that the message is sent to the recipient. | 
 **text** | **string** | The text sent in the message. | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -20,6 +20,5 @@ Name | Type | Description | Notes
 **start_odometer** | **int** | Odometer reading (in meters) at the beginning of the trip. | [optional] 
 **toll_meters** | **int** | Length in meters trip spent on toll roads. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
