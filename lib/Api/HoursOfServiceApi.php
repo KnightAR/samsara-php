@@ -345,9 +345,7 @@ class HoursOfServiceApi
 
 
         $defaultHeaders = [];
-        if ($this->config->getAccessToken()) {
-            $defaultHeaders['Authorization'] = 'Bearer '. $this->config->getAccessToken();
-        }
+
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
         }
@@ -644,9 +642,7 @@ class HoursOfServiceApi
 
 
         $defaultHeaders = [];
-        if ($this->config->getAccessToken()) {
-            $defaultHeaders['Authorization'] = 'Bearer '. $this->config->getAccessToken();
-        }
+
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
         }
@@ -912,9 +908,7 @@ class HoursOfServiceApi
 
 
         $defaultHeaders = [];
-        if ($this->config->getAccessToken()) {
-            $defaultHeaders['Authorization'] = 'Bearer '. $this->config->getAccessToken();
-        }
+
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
         }
@@ -1184,9 +1178,7 @@ class HoursOfServiceApi
 
 
         $defaultHeaders = [];
-        if ($this->config->getAccessToken()) {
-            $defaultHeaders['Authorization'] = 'Bearer '. $this->config->getAccessToken();
-        }
+
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
         }
